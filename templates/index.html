@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jarvis AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hud" aria-label="Jarvis assistant">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">J.A.R.V.I.S.</p>
+            <h1>Online</h1>
+          </div>
+          <div class="status" id="status">Initializing</div>
+        </div>
+
+        <div class="core" aria-hidden="true">
+          <div class="ring ring-one"></div>
+          <div class="ring ring-two"></div>
+          <div class="ring ring-three"></div>
+          <div class="pulse"></div>
+        </div>
+
+        <div class="readout" id="transcript">Say “Hey Jarvis” to wake me.</div>
+
+        <div class="controls">
+          <button id="listenButton" type="button">Start Listening</button>
+          <button id="cameraButton" type="button">Enable Camera</button>
+          <button id="muteButton" type="button">Voice On</button>
+        </div>
+      </section>
+
+      <aside class="vision" aria-label="Camera preview">
+        <video id="camera" autoplay muted playsinline></video>
+        <div class="scanline"></div>
+        <div class="vision-label">Visual feed</div>
+      </aside>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
